@@ -130,7 +130,7 @@ export async function buildApp(options: OptionsApp): Promise<FastifyInstance> {
       cacheControl: false,
       setHeaders(res, chemin) {
         const estAsset = relative(staticDir, chemin).startsWith(`assets${sep}`);
-        res.setHeader('Cache-Control', estAsset ? CACHE_IMMUABLE : 'no-cache');
+        res.header('Cache-Control', estAsset ? CACHE_IMMUABLE : 'no-cache');
       },
     });
   }
