@@ -208,14 +208,20 @@
   top: 0;
   bottom: 0;
   z-index: 1;
-  display: none;
-  text-align: center;
+  visibility: hidden;
   white-space: nowrap;
   pointer-events: none;
 }
 
 .voyelle.liee .syllabe-liee {
-  display: block;
+  visibility: visible;
+}
+
+.voyelle.liee .etiquette {
+  width: var(--largeur-liee);
+  /* min-width est posé en ligne par React : on le neutralise le temps de la liaison. */
+  min-width: 0 !important;
+  padding-inline: 0 !important;
 }
 
 .consonne.liee .lettres,
