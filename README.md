@@ -1,6 +1,7 @@
 # La Route des Syllabes
 
 Application web pour la classe de CP, inspirée de l'activité allemande « Autolesen ».
+Créée par **Willem Vanbaelinghem**.
 Sur le grand écran tactile, chaque route porte un véhicule qui transporte une **consonne**.
 L'élève fait glisser le véhicule avec le doigt en prolongeant le son (« llllll… »).
 Quand la consonne touche une **voyelle**, les deux se collent et forment la syllabe : « la ! ».
@@ -271,3 +272,7 @@ les sons sont générés dans le navigateur et la voix utilise la synthèse voca
 
 Polices : [Andika](https://software.sil.org/andika/) (SIL), Nunito et Fredoka, toutes sous licence
 SIL Open Font License, fournies par Fontsource.
+
+## Crédits
+
+Conception et développement : **Willem Vanbaelinghem**.

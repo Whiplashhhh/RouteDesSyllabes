@@ -15,6 +15,17 @@
   padding-block: clamp(1.25rem, 3vw, 3rem) 6rem;
 }
 
+.pied-page {
+  padding: 0 1rem 1.5rem;
+  text-align: center;
+}
+
+.mention-createur {
+  color: var(--encre-pale);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
 /* --- Boutons ---------------------------------------------------------- */
 
 .bouton {

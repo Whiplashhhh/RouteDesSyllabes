@@ -141,6 +141,7 @@ export function Connexion() {
             <IconeJouer taille={22} />
             Jouer sans compte
           </Link>
+          <p className="mention-createur">Créé par Willem Vanbaelinghem</p>
         </form>
       </div>
     </main>

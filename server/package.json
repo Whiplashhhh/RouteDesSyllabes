@@ -2,6 +2,7 @@
   "name": "@rds/server",
   "version": "1.0.0",
   "private": true,
+  "author": "Willem Vanbaelinghem",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",

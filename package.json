@@ -2,6 +2,7 @@
   "name": "route-des-syllabes",
   "version": "1.0.0",
   "private": true,
+  "author": "Willem Vanbaelinghem",
   "description": "La Route des Syllabes — application de lecture pour la classe de CP",
   "type": "module",
   "workspaces": [

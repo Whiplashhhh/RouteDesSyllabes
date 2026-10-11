@@ -237,6 +237,9 @@ export function Accueil() {
           )}
         </div>
       </main>
+      <footer className="pied-page">
+        <p className="mention-createur">La Route des Syllabes · créé par Willem Vanbaelinghem</p>
+      </footer>
     </div>
   );
 }
