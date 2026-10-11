@@ -1,0 +1,17 @@
+{
+  "name": "La Route des Syllabes",
+  "short_name": "Syllabes",
+  "description": "La consonne glisse jusqu'à la voyelle pour former la syllabe.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#fff9ef",
+  "theme_color": "#4ea8f2",
+  "icons": [
+    { "src": "/icone.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icone-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
