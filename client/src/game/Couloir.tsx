@@ -3,7 +3,7 @@ import type { PoliceId, Retours, RouteStyleId, VehiculeRoute } from '../../../sh
 import { syllabe, type RouteTiree } from '../../../shared/tirage';
 import { BandeRoute } from './decor/BandeRoute';
 import { VEHICULE_VB, placerVoyelles, type GeometrieRoute } from './geometrie';
-import { afficher, police } from './polices';
+import { afficher, cadreEtiquettes, police } from './polices';
 import { Moteur, debloquerAudio, jouerDing } from './retours/sons';
 import { direSyllabe } from './retours/voix';
 import { CATALOGUE } from './vehicules/catalogue';
@@ -91,6 +91,15 @@ export function Couloir(props: PropsCouloir) {
     [largeur, geo, largeurConsonne, largeursVoyelles.join(','), affichee.variations],
   );
 
+  // Toutes les étiquettes de la route partagent un cadre, posé sur la même ligne.
+  const cadre = cadreEtiquettes(
+    p,
+    [texteConsonne, ...textesVoyelles],
+    geo.taillePolice,
+    geo.etiquetteH,
+  );
+  const etiquetteHaut = geo.etiquetteHaut + geo.etiquetteH - cadre.hauteur;
+
   const echelle = geo.vehiculeH / VEHICULE_VB.hauteur;
   const rigHaut = geo.sol - geo.vehiculeH * (VEHICULE_VB.sol / VEHICULE_VB.hauteur);
   const def = CATALOGUE[props.vehicule.type] ?? CATALOGUE.citadine;
@@ -102,6 +111,8 @@ export function Couloir(props: PropsCouloir) {
     positions,
     largeursVoyelles,
     rigHaut,
+    etiquetteHaut,
+    cadre,
     echelle,
     def,
     route: affichee.route,
@@ -187,7 +198,7 @@ export function Couloir(props: PropsCouloir) {
       const q = P();
       const hote = couloirRef.current;
       if (!hote) return;
-      const y = q.geo.etiquetteHaut + q.geo.etiquetteH * 0.5;
+      const y = q.etiquetteHaut + q.cadre.hauteur * 0.5;
       for (let k = 0; k < 8; k++) {
         const s = document.createElement('div');
         s.className = 'etoile-fete';
@@ -661,8 +672,8 @@ export function Couloir(props: PropsCouloir) {
 
   const styleEtiquette = {
     fontSize: geo.taillePolice * p.taille,
-    height: geo.etiquetteH,
-    lineHeight: `${geo.etiquetteH}px`,
+    height: cadre.hauteur,
+    lineHeight: `${cadre.interligne}px`,
     fontFamily: p.famille,
     fontWeight: p.graisse,
     '--rayon-etiquette': `${geo.taillePolice * 0.3}px`,
@@ -681,7 +692,7 @@ export function Couloir(props: PropsCouloir) {
         <BandeRoute style={props.styleRoute} largeur={largeur} hauteur={geo.routeH} />
       </div>
 
-      <div ref={tracesRef} className="traces" style={{ top: geo.etiquetteHaut }} aria-hidden>
+      <div ref={tracesRef} className="traces" style={{ top: etiquetteHaut }} aria-hidden>
         {Array.from({ length: 10 }, (_, i) => (
           <div key={i} className="trace" style={{ ...styleEtiquette, opacity: 0 }} />
         ))}
@@ -695,7 +706,7 @@ export function Couloir(props: PropsCouloir) {
           }}
           className="porte-etiquette voyelle"
           data-voyelle={affichee.route.voyelles[i]}
-          style={{ top: geo.etiquetteHaut, transform: `translate3d(${positions[i]}px,0,0)` }}
+          style={{ top: etiquetteHaut, transform: `translate3d(${positions[i]}px,0,0)` }}
         >
           <div className="etiquette" style={styleEtiquette}>
             <span className="lettres">{texte}</span>
@@ -723,7 +734,7 @@ export function Couloir(props: PropsCouloir) {
         <div
           ref={consonneRef}
           className="porte-etiquette consonne"
-          style={{ left: geo.etiquetteX, top: geo.etiquetteHaut - rigHaut }}
+          style={{ left: geo.etiquetteX, top: etiquetteHaut - rigHaut }}
         >
           <div className="etiquette" style={styleEtiquette}>
             <span className="lettres">{texteConsonne}</span>
