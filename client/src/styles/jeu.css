@@ -211,6 +211,9 @@
   visibility: hidden;
   white-space: nowrap;
   pointer-events: none;
+  /* Les liaisons de la cursive reposent sur le crénage : ni espacement, ni crénage coupé. */
+  letter-spacing: 0;
+  font-kerning: normal;
 }
 
 .voyelle.liee .syllabe-liee {
