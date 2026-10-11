@@ -22,7 +22,7 @@ Quand la consonne touche une **voyelle**, les deux se collent et forment la syll
 5. [Passer à un nom de domaine en HTTPS](#5-passer-à-un-nom-de-domaine-en-https)
 6. [Utilisation en classe](#6-utilisation-en-classe)
 7. [Développement](#7-développement)
-8. [Police cursive (à ajouter plus tard)](#8-police-cursive-à-ajouter-plus-tard)
+8. [Police cursive](#8-police-cursive)
 9. [Données personnelles (RGPD)](#données-personnelles-rgpd)
 
 ---
@@ -248,23 +248,15 @@ build, tests de bout en bout, construction et démarrage de l'image Docker).
 
 ---
 
-## 8. Police cursive (à ajouter plus tard)
+## 8. Police cursive
 
-L'architecture prévoit une police cursive scolaire, sans la livrer (licence à vérifier) :
+Dans l'éditeur, **Règles → Écriture des lettres** propose trois choix : minuscules, majuscules ou
+**cursive**. La cursive utilise [Playwrite FR Trad](https://fonts.google.com/specimen/Playwrite+FR+Trad)
+(licence OFL), cursive scolaire française à boucles, auto-hébergée via `@fontsource/playwrite-fr-trad`.
+En cursive, quand la consonne touche la voyelle, la syllabe s'écrit d'un seul trait (lettres liées).
 
-1. Déposez le fichier dans `client/public/polices/cursive.woff2`.
-2. Déclarez-la dans `client/src/styles/global.css` :
-
-   ```css
-   @font-face {
-     font-family: 'RDS Cursive';
-     src: url('/polices/cursive.woff2') format('woff2');
-     font-display: swap;
-   }
-   ```
-
-3. Dans `client/src/game/polices.ts`, passez `disponible: true` pour l'entrée `cursive`, puis
-   ajoutez l'option dans `client/src/components/editeur/SectionRegles.tsx`.
+Pour changer de police cursive, modifiez l'entrée `cursive` de `client/src/game/polices.ts` et
+l'import correspondant dans `client/src/main.tsx`. En démo : `/demo?cursive=1`.
 
 ---
 

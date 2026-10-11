@@ -43,6 +43,7 @@ export function Demo() {
       };
     }
     if (params.get('majuscules') === '1') c.police = 'script-majuscule';
+    if (params.get('cursive') === '1') c.police = 'cursive';
     if (params.get('fete') === '1') c.retours.fete = true;
     if (params.get('retour') === '1') c.retours.retourAuto = true;
     const lettres = params.get('lettres');

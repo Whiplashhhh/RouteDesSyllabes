@@ -234,6 +234,16 @@ export function Couloir(props: PropsCouloir) {
       const el = voyellesRef.current[i];
       el?.classList.add('soudee');
       consonneRef.current?.classList.add('soudee');
+      const voyelle = q.route.voyelles[i];
+      const lie = el?.querySelector<HTMLElement>('.syllabe-liee');
+      if (police(q.police).liee && lie && voyelle) {
+        // Écriture liée : la syllabe entière, d'un trait, par-dessus les deux étiquettes.
+        lie.textContent = afficher(syllabe(q.route.consonne, voyelle), q.police);
+        lie.style.left = `${-q.largeurConsonne}px`;
+        lie.style.width = `${q.largeurConsonne + (q.largeursVoyelles[i] ?? 0)}px`;
+        el?.classList.add('liee');
+        consonneRef.current?.classList.add('liee');
+      }
 
       if (q.retours.fusion) {
         const eclat = [
@@ -251,7 +261,6 @@ export function Couloir(props: PropsCouloir) {
       }
       if (q.retours.fete && !q.reduit) feter(front);
       if (q.retours.bruitages) jouerDing();
-      const voyelle = q.route.voyelles[i];
       if (q.retours.voix && voyelle) direSyllabe(syllabe(q.route.consonne, voyelle));
     };
 
@@ -260,8 +269,9 @@ export function Couloir(props: PropsCouloir) {
       const v = e.voyelles[i];
       if (!v || !v.collee) return;
       v.collee = false;
-      voyellesRef.current[i]?.classList.remove('soudee');
-      if (!e.voyelles.some((x) => x.collee)) consonneRef.current?.classList.remove('soudee');
+      voyellesRef.current[i]?.classList.remove('soudee', 'liee');
+      if (!e.voyelles.some((x) => x.collee))
+        consonneRef.current?.classList.remove('soudee', 'liee');
       const retour = q.reduit
         ? 'transform 200ms ease-out'
         : 'transform 480ms cubic-bezier(.34,1.56,.64,1)';
@@ -645,10 +655,11 @@ export function Couloir(props: PropsCouloir) {
   // --- Rendu ---------------------------------------------------------------
 
   const styleEtiquette = {
-    fontSize: geo.taillePolice,
+    fontSize: geo.taillePolice * p.taille,
     height: geo.etiquetteH,
     lineHeight: `${geo.etiquetteH}px`,
     fontFamily: p.famille,
+    fontWeight: p.graisse,
     '--rayon-etiquette': `${geo.taillePolice * 0.3}px`,
     paddingInline: geo.taillePolice * 0.24,
     minWidth: geo.etiquetteH * 0.86,
@@ -683,6 +694,7 @@ export function Couloir(props: PropsCouloir) {
         >
           <div className="etiquette" style={styleEtiquette}>
             <span className="lettres">{texte}</span>
+            <span className="syllabe-liee" aria-hidden />
           </div>
         </div>
       ))}

@@ -3,15 +3,20 @@ import type { PoliceId } from '../../../shared/seance';
 /**
  * Registre des polices des lettres.
  *
- * Pour ajouter une police cursive scolaire : déposer le fichier
- * `client/public/polices/cursive.woff2`, puis passer `disponible` à `true`
- * ci-dessous (voir README, section « Police cursive »).
+ * La cursive utilise Playwrite FR Trad (licence OFL, auto-hébergée via
+ * @fontsource), modèle d'écriture scolaire française.
  */
 export interface Police {
   id: PoliceId;
   nom: string;
   famille: string;
   majuscules: boolean;
+  /** Graisse des étiquettes (la cursive n'existe qu'en 400 : pas de faux gras). */
+  graisse: number;
+  /** Facteur de taille : les boucles de la cursive montent plus haut. */
+  taille: number;
+  /** Écriture liée : une fois collée, la syllabe s'écrit d'un seul trait. */
+  liee: boolean;
   disponible: boolean;
 }
 
@@ -21,6 +26,9 @@ export const POLICES_LETTRES: Record<PoliceId, Police> = {
     nom: 'Script minuscule',
     famille: "'Andika', 'Andika Lettres', sans-serif",
     majuscules: false,
+    graisse: 700,
+    taille: 1,
+    liee: false,
     disponible: true,
   },
   'script-majuscule': {
@@ -28,14 +36,20 @@ export const POLICES_LETTRES: Record<PoliceId, Police> = {
     nom: 'Script majuscule',
     famille: "'Andika', 'Andika Lettres', sans-serif",
     majuscules: true,
+    graisse: 700,
+    taille: 1,
+    liee: false,
     disponible: true,
   },
   cursive: {
     id: 'cursive',
     nom: 'Cursive',
-    famille: "'RDS Cursive', 'Andika', sans-serif",
+    famille: "'Playwrite FR Trad', 'Andika', cursive",
     majuscules: false,
-    disponible: false,
+    graisse: 400,
+    taille: 0.82,
+    liee: true,
+    disponible: true,
   },
 };
 

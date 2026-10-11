@@ -8,6 +8,7 @@ import '@fontsource/nunito/700.css';
 import '@fontsource/nunito/800.css';
 import '@fontsource/fredoka/500.css';
 import '@fontsource/fredoka/600.css';
+import '@fontsource/playwrite-fr-trad/400.css';
 import './styles/tokens.css';
 import './styles/global.css';
 import './styles/jeu.css';

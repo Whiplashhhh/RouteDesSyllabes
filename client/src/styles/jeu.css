@@ -172,6 +172,7 @@
 }
 
 .voyelle .etiquette {
+  position: relative;
   transform-origin: 0% 50%;
 }
 
@@ -199,6 +200,27 @@
 
 .voyelle.soudee {
   z-index: 4;
+}
+
+/* Écriture liée (cursive) : la syllabe collée s'écrit d'un seul trait. */
+.syllabe-liee {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.voyelle.liee .syllabe-liee {
+  display: block;
+}
+
+.consonne.liee .lettres,
+.voyelle.liee .lettres {
+  visibility: hidden;
 }
 
 .voyelle {
