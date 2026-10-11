@@ -11,6 +11,7 @@ import '@fontsource/fredoka/600.css';
 import './styles/tokens.css';
 import './styles/global.css';
 import './styles/jeu.css';
+import './styles/maitresse.css';
 import { App } from './App';
 
 createRoot(document.getElementById('racine') as HTMLElement).render(
