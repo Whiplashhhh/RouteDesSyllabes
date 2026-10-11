@@ -151,7 +151,7 @@ Le détail est dans [`DECISIONS.md`](DECISIONS.md). Les principales :
 - **Docker n'a pas pu être lancé dans l'environnement de développement** : l'image est construite
   et démarrée à chaque PR dans la CI GitHub (healthcheck, création de compte, connexion, séances,
   utilisateur non root), mais pas encore sur le VPS lui-même.
-- Police cursive scolaire : architecture prête, fichier à fournir (README, section 8).
+- Police cursive scolaire : Playwrite FR Trad (OFL), au choix dans l'éditeur (README, section 8).
 - Réinitialisation du mot de passe par email (aujourd'hui en ligne de commande seulement).
 - Réordonner les séances par glisser-déposer ; dossiers de séances.
 - La jointure des deux étiquettes soudées laisse parfois deviner un très fin liseré.

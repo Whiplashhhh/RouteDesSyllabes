@@ -114,6 +114,16 @@ export function SectionRegles({ config, modifier }: Props) {
                 </span>
               ),
             },
+            {
+              valeur: 'cursive',
+              aria: 'Cursive',
+              libelle: (
+                <span className="segment-police">
+                  <span className="segment-police-exemple cursive">la</span>
+                  <span>Cursive</span>
+                </span>
+              ),
+            },
           ]}
         />
       </BlocReglage>

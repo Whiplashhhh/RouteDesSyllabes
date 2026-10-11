@@ -90,10 +90,7 @@ export const COULEURS = [
 ] as const;
 export type CouleurId = (typeof COULEURS)[number];
 
-/**
- * Polices des lettres. « cursive » est prévue dans l'architecture mais
- * le fichier de police n'est pas livré (voir README).
- */
+/** Polices des lettres. */
 export const POLICES = ['script-minuscule', 'script-majuscule', 'cursive'] as const;
 export type PoliceId = (typeof POLICES)[number];
 
