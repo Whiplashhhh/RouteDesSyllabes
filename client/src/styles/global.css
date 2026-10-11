@@ -12,6 +12,8 @@ body,
 }
 
 html {
+  /* Échelle fluide : les rem suivent la taille de l'écran (du 13 au 86 pouces). */
+  font-size: clamp(15px, 0.42vw + 9.5px, 26px);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -19,7 +21,7 @@ html {
 body {
   margin: 0;
   font-family: var(--police-texte);
-  font-size: clamp(16px, 0.55vw + 11px, 22px);
+  font-size: 1rem;
   line-height: 1.5;
   color: var(--encre);
   background: var(--creme);

@@ -9,7 +9,17 @@ export default defineConfig({
     host: true,
     fs: { allow: ['..'] },
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        // En développement seulement : le serveur vérifie que l'en-tête Origin
+        // correspond à son propre hôte (protection CSRF).
+        configure: (proxy) => {
+          proxy.on('proxyReq', (requete) => {
+            if (requete.getHeader('origin')) requete.setHeader('origin', 'http://localhost:3000');
+          });
+        },
+      },
     },
   },
   build: {
