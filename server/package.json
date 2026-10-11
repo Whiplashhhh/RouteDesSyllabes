@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "create-user": "node dist/server/src/cli/create-user.js",
-    "reset-password": "node dist/server/src/cli/reset-password.js"
+    "create-user:dev": "tsx src/cli/create-user.ts",
+    "reset-password": "node dist/server/src/cli/reset-password.js",
+    "reset-password:dev": "tsx src/cli/reset-password.ts"
   },
   "dependencies": {
     "@fastify/cookie": "^11.0.1",
