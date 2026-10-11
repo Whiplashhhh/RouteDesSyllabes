@@ -44,7 +44,8 @@ export function Scene({
     const el = hoteRef.current;
     if (!el) return;
     const mesurer = () => {
-      const r = el.getBoundingClientRect();
+      // Taille de mise en page (hors transformations CSS, ex. animation d'entrée).
+      const r = { width: el.clientWidth, height: el.clientHeight };
       setTaille((t) =>
         t && Math.abs(t.l - r.width) < 0.5 && Math.abs(t.h - r.height) < 0.5
           ? t
