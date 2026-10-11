@@ -159,8 +159,11 @@ TRUST_PROXY=true     # pour connaître la vraie IP des visiteurs (limitation des
 
 et redémarrez : `docker compose up -d`.
 
-Si le proxy tourne sur la même machine, vous pouvez n'exposer le port qu'en local en remplaçant la
-ligne `ports` du `docker-compose.yml` par `- '127.0.0.1:${APP_PORT:-8080}:8080'`.
+Si le proxy tourne sur la même machine, n'exposez le port qu'en local en ajoutant `APP_BIND=127.0.0.1`
+dans `.env`.
+
+Sans nom de domaine, un sous-domaine [sslip.io](https://sslip.io) qui contient l'IP du VPS
+(ex. `syllabes.203-0-113-10.sslip.io`) permet aussi d'obtenir un certificat Let's Encrypt.
 
 ### Avec Caddy (certificat automatique)
 

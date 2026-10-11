@@ -6,7 +6,7 @@ services:
     container_name: route-des-syllabes
     restart: unless-stopped
     ports:
-      - '${APP_PORT:-8080}:8080'
+      - '${APP_BIND:-0.0.0.0}:${APP_PORT:-8080}:8080'
     environment:
       SESSION_SECRET: ${SESSION_SECRET:?Définissez SESSION_SECRET dans le fichier .env (voir .env.example)}
       COOKIE_SECURE: ${COOKIE_SECURE:-false}
