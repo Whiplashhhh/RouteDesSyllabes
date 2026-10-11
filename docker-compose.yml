@@ -1,0 +1,29 @@
+# La Route des Syllabes — lancement : `docker compose up -d --build`
+services:
+  app:
+    build: .
+    image: route-des-syllabes:latest
+    container_name: route-des-syllabes
+    restart: unless-stopped
+    ports:
+      - '${APP_PORT:-8080}:8080'
+    environment:
+      SESSION_SECRET: ${SESSION_SECRET:?Définissez SESSION_SECRET dans le fichier .env (voir .env.example)}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      ALLOW_SIGNUP: ${ALLOW_SIGNUP:-false}
+      TRUST_PROXY: ${TRUST_PROXY:-false}
+    volumes:
+      - donnees:/data
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8080/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+volumes:
+  donnees:
