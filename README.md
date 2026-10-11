@@ -270,6 +270,8 @@ les sons sont générés dans le navigateur et la voix utilise la synthèse voca
 
 ## Licences
 
+Code : [licence MIT](LICENSE), © 2026 Willem Vanbaelinghem.
+
 Polices : [Andika](https://software.sil.org/andika/) (SIL), Nunito et Fredoka, toutes sous licence
 SIL Open Font License, fournies par Fontsource.
 
