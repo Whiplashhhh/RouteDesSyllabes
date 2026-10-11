@@ -1,0 +1,41 @@
+/* Palette et échelles de l'application, univers « livre illustré ». */
+:root {
+  --ciel: #4ea8f2;
+  --ciel-fonce: #2a7cc4;
+  --ciel-doux: #e3f3fd;
+  --soleil: #ffd23f;
+  --soleil-doux: #fff3c4;
+  --prairie: #5cc97a;
+  --prairie-fonce: #36985a;
+  --prairie-doux: #e3f6e7;
+  --corail: #ff8a65;
+  --corail-fonce: #e0643e;
+  --corail-doux: #ffe8df;
+  --violet: #a37ff0;
+  --violet-doux: #efe8fd;
+
+  --creme: #fff9ef;
+  --creme-2: #fbf0dc;
+  --papier: #fffdf8;
+  --bord: #efe2cb;
+  --encre: #1f2433;
+  --encre-douce: #5d6478;
+  --encre-pale: #8b91a3;
+
+  --ombre-1: 0 1px 2px rgb(92 64 30 / 8%), 0 2px 6px rgb(92 64 30 / 8%);
+  --ombre-2: 0 2px 4px rgb(92 64 30 / 8%), 0 10px 24px rgb(92 64 30 / 12%);
+  --ombre-3: 0 4px 10px rgb(92 64 30 / 10%), 0 22px 48px rgb(92 64 30 / 18%);
+
+  --rayon-s: 12px;
+  --rayon-m: 20px;
+  --rayon-l: 28px;
+  --rayon-xl: 36px;
+
+  --police-titre: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --police-texte: 'Nunito', system-ui, sans-serif;
+  --police-lettres: 'Andika', sans-serif;
+
+  --cible: 64px; /* cible tactile minimale pour la maîtresse */
+  --courbe-rebond: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --courbe-douce: cubic-bezier(0.22, 1, 0.36, 1);
+}

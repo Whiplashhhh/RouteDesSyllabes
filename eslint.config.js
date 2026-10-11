@@ -27,6 +27,11 @@ export default tseslint.config(
     },
   },
   {
+    // Catalogues de dessins SVG : composants et données vivent ensemble volontairement.
+    files: ['client/src/game/vehicules/**/*.tsx'],
+    rules: { 'react-refresh/only-export-components': 'off' },
+  },
+  {
     files: ['server/**/*.ts', 'e2e/**/*.ts', '*.config.{js,ts}'],
     languageOptions: { globals: globals.node },
   },

@@ -1,0 +1,547 @@
+/* ==========================================================================
+   Écran de jeu (mode élève)
+   ========================================================================== */
+
+.ecran-jeu {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #94d3f4;
+  overscroll-behavior: none;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  background: #bfe3f5;
+  contain: layout paint;
+}
+
+.fond {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.couloir {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.couloir-route {
+  position: absolute;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  filter: drop-shadow(0 -1px 0 rgb(255 255 255 / 25%));
+}
+
+.bande-route {
+  display: block;
+}
+
+/* --- Véhicule ------------------------------------------------------------ */
+
+.vehicule-rig {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  will-change: transform;
+}
+
+.inclinaison,
+.suspension {
+  width: 100%;
+  height: 100%;
+}
+
+.inclinaison {
+  transform-origin: 50% 97%;
+}
+
+.suspension {
+  transform-origin: 50% 100%;
+}
+
+.vehicule-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.roue {
+  will-change: transform;
+}
+
+/* Veille : le véhicule « respire », les phares clignent, les yeux aussi. */
+.en-veille .suspension {
+  animation: respiration 2.8s ease-in-out infinite;
+}
+
+.en-veille .phare-halo {
+  animation: phare 3.4s ease-in-out infinite;
+}
+
+.en-veille .oeil,
+.scene-apercu .oeil {
+  animation: cligne 5s ease-in-out infinite;
+}
+
+@keyframes respiration {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-0.8%) scaleY(1.02);
+  }
+}
+
+@keyframes phare {
+  0%,
+  62%,
+  100% {
+    opacity: 0;
+  }
+  72% {
+    opacity: 0.95;
+  }
+  84% {
+    opacity: 0;
+  }
+}
+
+@keyframes cligne {
+  0%,
+  90%,
+  100% {
+    transform: scaleY(1);
+  }
+  94% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* --- Étiquettes de lettres ----------------------------------------------- */
+
+.porte-etiquette {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  will-change: transform;
+}
+
+.porte-etiquette.consonne {
+  z-index: 4;
+}
+
+.etiquette {
+  box-sizing: border-box;
+  display: block;
+  color: #10131c;
+  background: #fff;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  /* Centre optique : les minuscules paraissent sinon un peu basses. */
+  text-indent: 0;
+  padding-bottom: 0.06em;
+  border-radius: var(--rayon-etiquette, 0.3em);
+  border: 0.03em solid rgb(31 36 51 / 8%);
+  box-shadow:
+    0 0.05em 0 rgb(31 36 51 / 6%),
+    0 0.1em 0.28em rgb(31 36 51 / 20%);
+  font-kerning: none;
+}
+
+.consonne .etiquette {
+  transform-origin: 100% 50%;
+}
+
+.voyelle .etiquette {
+  transform-origin: 0% 50%;
+}
+
+.lettres {
+  display: inline-block;
+  transition: transform 0.18s ease-out;
+}
+
+/* Fusion : les deux étiquettes n'en forment plus qu'une,
+   et les lettres se rapprochent pour se lire d'un seul souffle. */
+.consonne.soudee .lettres {
+  transform: translateX(0.14em);
+}
+
+.voyelle.soudee .lettres {
+  transform: translateX(-0.14em);
+}
+
+.consonne.soudee .etiquette {
+  background: #fff7d6;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right-color: transparent;
+}
+
+.voyelle.soudee {
+  z-index: 4;
+}
+
+.voyelle {
+  transition-property: transform;
+}
+
+.voyelle .etiquette {
+  transition: opacity 0.25s ease;
+}
+
+.voyelle.couverte .etiquette {
+  opacity: 0;
+}
+
+.voyelle.soudee .etiquette {
+  background: #fff7d6;
+  box-shadow: 0.1em 0.1em 0.24em -0.08em rgb(31 36 51 / 22%);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-color: transparent;
+}
+
+/* --- Traînée du son ------------------------------------------------------ */
+
+.traces {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.trace {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1f2433;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    0 0 0.08em #fff,
+    0 0 0.18em #fff;
+}
+
+/* --- Petits effets -------------------------------------------------------- */
+
+.fumee {
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 35% 35%, #fff 0%, #eef1f6 55%, #d9dfe8 100%);
+}
+
+.etoile-fete {
+  position: absolute;
+  z-index: 6;
+  pointer-events: none;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+/* --- Fond ----------------------------------------------------------------- */
+
+.nuage-derive {
+  animation-name: derive;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes derive {
+  from {
+    transform: translateX(var(--de, -1900px));
+  }
+  to {
+    transform: translateX(var(--a, 1900px));
+  }
+}
+
+.etoile-scintille {
+  animation-name: scintille;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scintille {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.scene-reduite *,
+.scene-reduite *::before,
+.scene-reduite *::after {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene *,
+  .scene *::before,
+  .scene *::after {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   Commandes de la maîtresse
+   ========================================================================== */
+
+.bouton-maitresse {
+  position: absolute;
+  top: max(10px, 1.4vmin);
+  right: max(10px, 1.4vmin);
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 6.5vmin, 110px);
+  height: clamp(56px, 6.5vmin, 110px);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: rgb(31 36 51 / 55%);
+  background: rgb(255 255 255 / 28%);
+  opacity: 0.6;
+  touch-action: none;
+  transition:
+    opacity 0.2s,
+    background 0.2s;
+}
+
+.bouton-maitresse.actif {
+  opacity: 1;
+  background: rgb(255 255 255 / 75%);
+}
+
+.bouton-maitresse svg:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouton-maitresse-icone {
+  width: 42%;
+  height: 42%;
+}
+
+.anneau-fond {
+  fill: none;
+  stroke: rgb(255 255 255 / 45%);
+  stroke-width: 3;
+}
+
+.anneau {
+  fill: none;
+  stroke: var(--soleil);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+
+.panneau-voile {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 3vmin;
+  background: rgb(31 36 51 / 35%);
+  backdrop-filter: blur(3px);
+  animation: apparait 0.2s ease-out;
+  touch-action: manipulation;
+}
+
+.panneau {
+  width: min(92vw, 860px);
+  max-height: 92vh;
+  overflow: auto;
+  padding: clamp(20px, 3vmin, 44px);
+  border-radius: var(--rayon-xl);
+  background: var(--creme);
+  box-shadow: var(--ombre-3);
+  font-size: clamp(18px, 1.6vmin + 8px, 30px);
+  animation: monte 0.32s var(--courbe-rebond);
+  user-select: none;
+}
+
+.panneau-entete {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(16px, 2.4vmin, 32px);
+}
+
+.panneau-entete > div {
+  flex: 1;
+}
+
+.panneau-surtitre {
+  color: var(--encre-douce);
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.panneau-titre {
+  font-size: 1.5em;
+}
+
+.panneau-fermer,
+.panneau-retour {
+  display: grid;
+  place-items: center;
+  width: var(--cible);
+  height: var(--cible);
+  border: 0;
+  border-radius: 50%;
+  background: var(--creme-2);
+  color: var(--encre);
+}
+
+.panneau-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: clamp(12px, 1.6vmin, 22px);
+}
+
+.action-grande {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: clamp(120px, 15vmin, 200px);
+  padding: 16px;
+  border: 0;
+  border-radius: var(--rayon-l);
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow:
+    inset 0 -5px 0 rgb(0 0 0 / 10%),
+    var(--ombre-1);
+  transition: transform 0.15s var(--courbe-rebond);
+}
+
+.action-grande:active {
+  transform: scale(0.96);
+}
+
+.action-grande svg {
+  width: clamp(36px, 4.5vmin, 64px);
+  height: clamp(36px, 4.5vmin, 64px);
+}
+
+.action-soleil {
+  background: var(--soleil);
+  color: #4a3a00;
+}
+
+.action-ciel {
+  background: var(--ciel);
+  color: #fff;
+}
+
+.action-prairie {
+  background: var(--prairie);
+  color: #fff;
+}
+
+.action-violet {
+  background: var(--violet);
+  color: #fff;
+}
+
+.action-corail {
+  background: var(--corail);
+  color: #fff;
+}
+
+.panneau-liste {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panneau-seance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: var(--cible);
+  padding: 14px 22px;
+  border: 2px solid var(--bord);
+  border-radius: var(--rayon-m);
+  background: var(--papier);
+  text-align: left;
+  font-weight: 800;
+}
+
+.panneau-seance.courante {
+  border-color: var(--ciel);
+  background: var(--ciel-doux);
+}
+
+.panneau-seance-lettres {
+  font-family: var(--police-lettres);
+  color: var(--encre-douce);
+  font-weight: 400;
+}
+
+.panneau-astuce {
+  margin-top: 20px;
+  color: var(--encre-pale);
+  font-size: 0.7em;
+  text-align: center;
+}
+
+@keyframes apparait {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes monte {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+}

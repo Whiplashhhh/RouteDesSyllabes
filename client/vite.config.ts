@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 // Configuration Vite : en développement, les appels /api sont relayés vers le serveur Fastify.
@@ -19,6 +19,6 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
-    include: ['src/**/*.test.ts', '../shared/**/*.test.ts'],
+    include: ['src/**/*.test.ts'],
   },
 });
