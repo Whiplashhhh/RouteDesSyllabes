@@ -22,13 +22,14 @@ export function Pastille({
       type="button"
       className={`pastille pastille-${type}${actif ? ' active' : ''}`}
       aria-pressed={actif}
+      aria-label={glisse ? `${texte}, son qui se prolonge` : texte}
       onClick={onClick}
       disabled={desactive}
       title={glisse ? 'Son qui se prolonge, idéal pour débuter' : undefined}
     >
       <span className="pastille-texte">{texte}</span>
       {glisse && (
-        <span className="pastille-vague" aria-label="son qui se prolonge">
+        <span className="pastille-vague" aria-hidden>
           <IconeVague taille={16} />
         </span>
       )}
