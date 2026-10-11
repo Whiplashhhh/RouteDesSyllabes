@@ -236,12 +236,17 @@ export function Couloir(props: PropsCouloir) {
       consonneRef.current?.classList.add('soudee');
       const voyelle = q.route.voyelles[i];
       const lie = el?.querySelector<HTMLElement>('.syllabe-liee');
-      if (police(q.police).liee && lie && voyelle) {
-        // Écriture liée : la syllabe entière, d'un trait, par-dessus les deux étiquettes.
+      const lettresConsonne = consonneInterieur()?.querySelector<HTMLElement>('.lettres');
+      if (police(q.police).liee && el && lie && lettresConsonne && voyelle) {
+        // Écriture liée : la syllabe entière, d'un trait. La consonne reste à sa place
+        // et l'étiquette de la voyelle se resserre juste après la syllabe.
+        const debut = lettresConsonne.offsetLeft - q.largeurConsonne;
         lie.textContent = afficher(syllabe(q.route.consonne, voyelle), q.police);
-        lie.style.left = `${-q.largeurConsonne}px`;
-        lie.style.width = `${q.largeurConsonne + (q.largeursVoyelles[i] ?? 0)}px`;
-        el?.classList.add('liee');
+        lie.style.left = `${debut}px`;
+        const marge = q.geo.taillePolice * 0.24;
+        const largeur = Math.max(marge, debut + lie.offsetWidth + marge);
+        el.style.setProperty('--largeur-liee', `${largeur}px`);
+        el.classList.add('liee');
         consonneRef.current?.classList.add('liee');
       }
 
