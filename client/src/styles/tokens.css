@@ -26,16 +26,16 @@
   --ombre-2: 0 2px 4px rgb(92 64 30 / 8%), 0 10px 24px rgb(92 64 30 / 12%);
   --ombre-3: 0 4px 10px rgb(92 64 30 / 10%), 0 22px 48px rgb(92 64 30 / 18%);
 
-  --rayon-s: 12px;
-  --rayon-m: 20px;
-  --rayon-l: 28px;
-  --rayon-xl: 36px;
+  --rayon-s: 0.75rem;
+  --rayon-m: 1.25rem;
+  --rayon-l: 1.75rem;
+  --rayon-xl: 2.25rem;
 
   --police-titre: 'Fredoka', 'Nunito', system-ui, sans-serif;
   --police-texte: 'Nunito', system-ui, sans-serif;
   --police-lettres: 'Andika', sans-serif;
 
-  --cible: 64px; /* cible tactile minimale pour la maîtresse */
+  --cible: max(64px, 4rem); /* cible tactile minimale pour la maîtresse */
   --courbe-rebond: cubic-bezier(0.34, 1.56, 0.64, 1);
   --courbe-douce: cubic-bezier(0.22, 1, 0.36, 1);
 }

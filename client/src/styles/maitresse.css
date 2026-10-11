@@ -4,14 +4,15 @@
 
 .page-maitresse {
   min-height: 100%;
-  background: radial-gradient(1200px 500px at 110% -10%, rgb(78 168 242 / 10%), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgb(255 210 63 / 14%), transparent 60%), var(--creme);
+  background: radial-gradient(75rem 31.25rem at 110% -10%, rgb(78 168 242 / 10%), transparent 60%),
+    radial-gradient(56.25rem 31.25rem at -10% 110%, rgb(255 210 63 / 14%), transparent 60%),
+    var(--creme);
 }
 
 .contenu {
-  width: min(100% - 32px, 1500px);
+  width: min(100% - 2rem, 93.75rem);
   margin-inline: auto;
-  padding-block: clamp(20px, 3vw, 48px) 96px;
+  padding-block: clamp(1.25rem, 3vw, 3rem) 6rem;
 }
 
 /* --- Boutons ---------------------------------------------------------- */
@@ -20,11 +21,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0.625rem;
   min-height: var(--cible);
-  padding: 0 26px;
+  padding: 0 1.625rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   font-weight: 800;
   font-size: 1.05rem;
   text-decoration: none;
@@ -49,7 +50,7 @@
   background: var(--ciel);
   box-shadow:
     inset 0 -4px 0 rgb(0 0 0 / 14%),
-    0 6px 16px rgb(42 124 196 / 28%);
+    0 0.375rem 1rem rgb(42 124 196 / 28%);
 }
 
 .bouton-principal:hover:not(:disabled) {
@@ -61,7 +62,7 @@
   background: var(--soleil);
   box-shadow:
     inset 0 -4px 0 rgb(0 0 0 / 10%),
-    0 6px 16px rgb(212 162 10 / 25%);
+    0 0.375rem 1rem rgb(212 162 10 / 25%);
 }
 
 .bouton-secondaire {
@@ -84,11 +85,11 @@
 .bouton-discret {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 14px;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0 0.875rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   color: var(--encre-douce);
   background: transparent;
   font-size: 0.95rem;
@@ -131,7 +132,7 @@
 }
 
 .lien-bouton {
-  min-height: 48px;
+  min-height: 3rem;
   border: 0;
   background: none;
   color: var(--ciel-fonce);
@@ -149,17 +150,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 10px clamp(16px, 3vw, 40px);
+  gap: 1rem;
+  padding: 0.625rem clamp(1rem, 3vw, 2.5rem);
   background: rgb(255 249 239 / 88%);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
   box-shadow: 0 1px 0 var(--bord);
 }
 
 .entete-marque {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   color: var(--encre);
   text-decoration: none;
 }
@@ -178,7 +179,7 @@
 .entete-compte {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   min-width: 0;
 }
 
@@ -217,8 +218,8 @@
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 16px 24px;
-  margin-bottom: clamp(20px, 3vw, 36px);
+  gap: 1rem 1.5rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2.25rem);
 }
 
 .titre-page h1 {
@@ -226,7 +227,7 @@
 }
 
 .sous-titre {
-  margin-top: 6px;
+  margin-top: 0.375rem;
   color: var(--encre-douce);
 }
 
@@ -234,8 +235,8 @@
 
 .grille-seances {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
-  gap: clamp(18px, 2vw, 32px);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 23.75rem), 1fr));
+  gap: clamp(1.125rem, 2vw, 2rem);
 }
 
 .carte-seance {
@@ -279,8 +280,8 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 12px;
-  padding: 18px 20px 20px;
+  gap: 0.75rem;
+  padding: 1.125rem 1.25rem 1.25rem;
 }
 
 .carte-titre {
@@ -291,7 +292,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: 0.375rem;
 }
 
 .carte-lettres-plus {
@@ -329,9 +330,9 @@
 .carte-confirmation {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   margin-top: auto;
-  padding-top: 6px;
+  padding-top: 0.375rem;
 }
 
 .bouton-jouer {
@@ -341,7 +342,7 @@
 
 .carte-confirmation {
   flex-wrap: wrap;
-  padding: 12px;
+  padding: 0.75rem;
   border-radius: var(--rayon-m);
   background: var(--corail-doux);
 }
@@ -360,8 +361,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  min-height: 320px;
+  gap: 0.875rem;
+  min-height: 20rem;
   border: 3px dashed var(--bord);
   border-radius: var(--rayon-l);
   color: var(--encre-douce);
@@ -380,12 +381,12 @@
 .carte-nouvelle-plus {
   display: grid;
   place-items: center;
-  width: 84px;
-  height: 84px;
+  width: 5.25rem;
+  height: 5.25rem;
   border-radius: 50%;
   color: #fff;
   background: var(--prairie);
-  box-shadow: 0 8px 20px rgb(54 152 90 / 30%);
+  box-shadow: 0 0.5rem 1.25rem rgb(54 152 90 / 30%);
 }
 
 /* --- Squelettes ---------------------------------------------------------- */
@@ -398,13 +399,13 @@
 }
 
 .squelette-ligne {
-  height: 18px;
-  border-radius: 9px;
+  height: 1.125rem;
+  border-radius: 0.5625rem;
 }
 
 .squelette-ligne.epaisse {
   height: var(--cible);
-  border-radius: 999px;
+  border-radius: 62.4375rem;
 }
 
 @keyframes reflet {
@@ -423,16 +424,16 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-  padding: 20px 24px;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
   border-radius: var(--rayon-m);
   background: var(--corail-doux);
   font-weight: 700;
 }
 
 .message-erreur {
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   border-radius: var(--rayon-s);
   color: #8a3015;
   background: var(--corail-doux);
@@ -440,7 +441,7 @@
 }
 
 .message-info {
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   border-radius: var(--rayon-s);
   color: #5c4a10;
   background: var(--soleil-doux);
@@ -451,7 +452,7 @@
   display: grid;
   place-items: center;
   min-height: 100%;
-  padding: 24px;
+  padding: 1.5rem;
 }
 
 .page-attente-jeu {
@@ -459,9 +460,9 @@
 }
 
 .chargement-roue {
-  width: 64px;
-  height: 64px;
-  border: 8px solid rgb(78 168 242 / 25%);
+  width: 4rem;
+  height: 4rem;
+  border: 0.5rem solid rgb(78 168 242 / 25%);
   border-top-color: var(--ciel);
   border-radius: 50%;
   animation: tourne 0.9s linear infinite;
@@ -478,11 +479,11 @@
 .notifications {
   position: fixed;
   left: 50%;
-  bottom: max(20px, env(safe-area-inset-bottom));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
   z-index: 50;
   display: grid;
-  gap: 10px;
-  width: min(100% - 32px, 560px);
+  gap: 0.625rem;
+  width: min(100% - 2rem, 35rem);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -490,9 +491,9 @@
 .notification {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 64px;
-  padding: 8px 8px 8px 18px;
+  gap: 0.75rem;
+  min-height: 4rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.125rem;
   border-radius: var(--rayon-m);
   color: #fff;
   background: var(--encre);
@@ -513,8 +514,8 @@
 .notification-pastille {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   flex: none;
   border-radius: 50%;
   background: rgb(255 255 255 / 25%);
@@ -525,10 +526,10 @@
 }
 
 .notification-action {
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 3rem;
+  padding: 0 1.125rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   color: var(--encre);
   background: var(--soleil);
   font-weight: 800;
@@ -537,8 +538,8 @@
 .notification-fermer {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   border: 0;
   border-radius: 50%;
   color: inherit;
@@ -550,7 +551,7 @@
 
 .champ {
   display: grid;
-  gap: 6px;
+  gap: 0.375rem;
 }
 
 .champ-libelle {
@@ -561,7 +562,7 @@
 .champ input,
 .ajout-son input {
   min-height: var(--cible);
-  padding: 0 20px;
+  padding: 0 1.25rem;
   border: 2px solid var(--bord);
   border-radius: var(--rayon-m);
   background: #fff;
@@ -575,15 +576,15 @@
 .ajout-son input:focus {
   outline: none;
   border-color: var(--ciel);
-  box-shadow: 0 0 0 4px rgb(78 168 242 / 18%);
+  box-shadow: 0 0 0 0.25rem rgb(78 168 242 / 18%);
 }
 
 .case {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 48px;
+  gap: 0.75rem;
+  min-height: 3rem;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -597,11 +598,11 @@
 .case-boite {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   flex: none;
   border: 2px solid var(--bord);
-  border-radius: 9px;
+  border-radius: 0.5625rem;
   background: #fff;
   transition: background 0.15s;
 }
@@ -610,7 +611,7 @@
   border-color: var(--prairie);
   background: var(--prairie)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E")
-    center / 20px no-repeat;
+    center / 1.25rem no-repeat;
 }
 
 .case input:focus-visible + .case-boite {
@@ -655,14 +656,14 @@
   place-items: start center;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: clamp(16px, 6vh, 72px) 16px clamp(180px, 26vh, 300px);
+  padding: clamp(1rem, 6vh, 4.5rem) 1rem clamp(11.25rem, 26vh, 18.75rem);
 }
 
 .carte-connexion {
   display: grid;
-  gap: 18px;
-  width: min(100%, 460px);
-  padding: clamp(24px, 3vw, 40px);
+  gap: 1.125rem;
+  width: min(100%, 28.75rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   border-radius: var(--rayon-xl);
   background: rgb(255 253 248 / 96%);
   box-shadow: var(--ombre-3);
@@ -672,7 +673,7 @@
 .carte-connexion-marque {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .carte-connexion-marque h1 {
@@ -692,7 +693,7 @@
 .separateur {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   color: var(--encre-pale);
   font-weight: 700;
   font-size: 0.9rem;
@@ -710,24 +711,24 @@
 /* --- Éditeur --------------------------------------------------------------- */
 
 .contenu-editeur {
-  padding-top: 14px;
+  padding-top: 0.875rem;
 }
 
 .editeur-barre {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .statut {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  min-height: 40px;
-  padding: 0 16px;
-  border-radius: 999px;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 62.4375rem;
   color: var(--encre-douce);
   font-weight: 700;
   font-size: 0.95rem;
@@ -751,8 +752,8 @@
 
 .editeur {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
-  gap: clamp(20px, 3vw, 44px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(22.5rem, 0.9fr);
+  gap: clamp(1.25rem, 3vw, 2.75rem);
   align-items: start;
 }
 
@@ -762,8 +763,8 @@
 
 .champ-nom input {
   width: 100%;
-  min-height: 72px;
-  padding: 0 4px;
+  min-height: 4.5rem;
+  padding: 0 0.25rem;
   border: 0;
   border-bottom: 3px dashed var(--bord);
   background: transparent;
@@ -779,11 +780,11 @@
 
 .onglets {
   display: flex;
-  gap: 8px;
-  margin-block: 20px;
-  padding: 6px;
+  gap: 0.5rem;
+  margin-block: 1.25rem;
+  padding: 0.375rem;
   overflow-x: auto;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   background: var(--creme-2);
 }
 
@@ -792,11 +793,11 @@
   flex: 1;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 56px;
-  padding: 0 18px;
+  gap: 0.625rem;
+  min-height: 3.5rem;
+  padding: 0 1.125rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   color: var(--encre-douce);
   background: transparent;
   font-weight: 800;
@@ -809,8 +810,8 @@
 .onglet-numero {
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
   background: rgb(31 36 51 / 8%);
   font-size: 0.85rem;
@@ -829,14 +830,14 @@
 
 .section-editeur {
   display: grid;
-  gap: 18px;
+  gap: 1.125rem;
   animation: apparait 0.25s ease-out;
 }
 
 .bloc-reglage {
   display: grid;
-  gap: 14px;
-  padding: clamp(18px, 2vw, 26px);
+  gap: 0.875rem;
+  padding: clamp(1.125rem, 2vw, 1.625rem);
   border-radius: var(--rayon-l);
   background: var(--papier);
   box-shadow: var(--ombre-1);
@@ -847,7 +848,7 @@
 }
 
 .bloc-aide {
-  margin-top: 4px;
+  margin-top: 0.25rem;
   color: var(--encre-douce);
   font-size: 0.95rem;
 }
@@ -855,9 +856,9 @@
 .legende-vague {
   display: inline-grid;
   place-items: center;
-  width: 26px;
-  height: 20px;
-  border-radius: 10px;
+  width: 1.625rem;
+  height: 1.25rem;
+  border-radius: 0.625rem;
   color: #1d6e8f;
   background: #d6f1fb;
   vertical-align: -3px;
@@ -868,18 +869,18 @@
 .clavier-pastilles {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .pastille {
   position: relative;
   display: inline-grid;
   place-items: center;
-  min-width: 64px;
-  height: 64px;
-  padding: 0 14px;
+  min-width: 4rem;
+  height: 4rem;
+  padding: 0 0.875rem;
   border: 0;
-  border-radius: 18px;
+  border-radius: 1.125rem;
   background: var(--creme);
   box-shadow:
     inset 0 0 0 2px var(--bord),
@@ -908,7 +909,7 @@
   background: var(--ciel);
   box-shadow:
     inset 0 -4px 0 rgb(0 0 0 / 15%),
-    0 4px 10px rgb(42 124 196 / 30%);
+    0 0.25rem 0.625rem rgb(42 124 196 / 30%);
 }
 
 .pastille-voyelle.active {
@@ -916,7 +917,7 @@
   background: var(--corail);
   box-shadow:
     inset 0 -4px 0 rgb(0 0 0 / 12%),
-    0 4px 10px rgb(224 100 62 / 30%);
+    0 0.25rem 0.625rem rgb(224 100 62 / 30%);
 }
 
 .pastille-vague {
@@ -925,24 +926,24 @@
   bottom: -6px;
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 20px;
-  border-radius: 10px;
+  width: 1.625rem;
+  height: 1.25rem;
+  border-radius: 0.625rem;
   color: #1d6e8f;
   background: #d6f1fb;
   box-shadow: 0 0 0 2px var(--papier);
 }
 
 .clavier-pastilles.compact .pastille {
-  min-width: 56px;
-  height: 56px;
+  min-width: 3.5rem;
+  height: 3.5rem;
   font-size: 1.5rem;
 }
 
 .ajout-son {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .ajout-son input {
@@ -956,19 +957,19 @@
 .segments {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  padding: 6px;
+  gap: 0.375rem;
+  padding: 0.375rem;
   border-radius: var(--rayon-m);
   background: var(--creme-2);
 }
 
 .segment {
   flex: 1;
-  min-width: 64px;
-  min-height: 56px;
-  padding: 6px 16px;
+  min-width: 4rem;
+  min-height: 3.5rem;
+  padding: 0.375rem 1rem;
   border: 0;
-  border-radius: 14px;
+  border-radius: 0.875rem;
   color: var(--encre-douce);
   background: transparent;
   font-weight: 800;
@@ -997,15 +998,15 @@
 
 .points-voyelles {
   display: flex;
-  gap: 5px;
-  height: 36px;
+  gap: 0.3125rem;
+  height: 2.25rem;
   align-items: center;
 }
 
 .points-voyelles span {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.25rem;
   background: currentColor;
   opacity: 0.6;
 }
@@ -1018,12 +1019,12 @@
 .segment-police {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .segment-police-exemple {
-  padding: 2px 10px;
-  border-radius: 10px;
+  padding: 2px 0.625rem;
+  border-radius: 0.625rem;
   background: #fff;
   box-shadow: inset 0 0 0 2px var(--bord);
   font-family: var(--police-lettres);
@@ -1035,15 +1036,15 @@
 
 .grille-vignettes {
   display: grid;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .vignettes-fonds {
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
 }
 
 .vignettes-routes {
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
 }
 
 .vignettes-vehicules {
@@ -1053,8 +1054,8 @@
 .vignette {
   position: relative;
   display: grid;
-  gap: 6px;
-  padding: 8px 8px 10px;
+  gap: 0.375rem;
+  padding: 0.5rem 0.5rem 0.625rem;
   border: 0;
   border-radius: var(--rayon-m);
   background: var(--creme);
@@ -1075,14 +1076,14 @@
   background: #fff;
   box-shadow:
     inset 0 0 0 3px var(--ciel),
-    0 6px 16px rgb(42 124 196 / 18%);
+    0 0.375rem 1rem rgb(42 124 196 / 18%);
 }
 
 .vignette-image {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0.75rem;
 }
 
 .vignettes-fonds .vignette-image {
@@ -1090,7 +1091,7 @@
 }
 
 .vignettes-vehicules .vignette-image {
-  padding: 8px 6px 2px;
+  padding: 0.5rem 0.375rem 2px;
   background: #e6f4fc;
 }
 
@@ -1103,8 +1104,8 @@
 .vignette-route-fond {
   display: flex;
   align-items: flex-end;
-  height: 84px;
-  padding-bottom: 6px;
+  height: 5.25rem;
+  padding-bottom: 0.375rem;
   background: linear-gradient(#cdebf9, #e8f6fd);
 }
 
@@ -1119,8 +1120,8 @@
   right: -6px;
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
   color: #fff;
   background: var(--ciel);
@@ -1129,12 +1130,12 @@
 
 .choix-vehicule {
   display: grid;
-  gap: 12px;
-  padding-top: 6px;
+  gap: 0.75rem;
+  padding-top: 0.375rem;
 }
 
 .choix-vehicule + .choix-vehicule {
-  padding-top: 18px;
+  padding-top: 1.125rem;
   border-top: 2px dashed var(--bord);
 }
 
@@ -1148,13 +1149,13 @@
 .nuancier {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .nuance {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   border: 0;
   border-radius: 50%;
   box-shadow:
@@ -1167,7 +1168,7 @@
   transform: scale(1.12);
   box-shadow:
     0 0 0 3px var(--papier),
-    0 0 0 6px var(--encre);
+    0 0 0 0.375rem var(--encre);
 }
 
 .nuance-libre {
@@ -1190,13 +1191,13 @@
 .interrupteur-ligne {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 6px 0;
+  gap: 0.75rem;
+  padding: 0.375rem 0;
 }
 
 .interrupteur-ligne + .interrupteur-ligne {
   border-top: 1px solid var(--bord);
-  padding-top: 12px;
+  padding-top: 0.75rem;
 }
 
 .interrupteur {
@@ -1204,7 +1205,7 @@
   display: flex;
   flex: 1;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   min-height: var(--cible);
   cursor: pointer;
 }
@@ -1231,23 +1232,23 @@
 
 .interrupteur-piste {
   position: relative;
-  width: 64px;
-  height: 38px;
+  width: 4rem;
+  height: 2.375rem;
   flex: none;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   background: #e7dcc8;
   transition: background 0.2s;
 }
 
 .interrupteur-bouton {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 30px;
-  height: 30px;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.875rem;
+  height: 1.875rem;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
+  box-shadow: 0 2px 0.25rem rgb(0 0 0 / 18%);
   transition: transform 0.25s var(--courbe-rebond);
 }
 
@@ -1256,7 +1257,7 @@
 }
 
 .interrupteur input:checked + .interrupteur-piste .interrupteur-bouton {
-  transform: translateX(26px);
+  transform: translateX(1.625rem);
 }
 
 .interrupteur input:focus-visible + .interrupteur-piste {
@@ -1267,11 +1268,11 @@
 .bouton-tester {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  min-height: 48px;
-  padding: 0 16px;
+  gap: 0.375rem;
+  min-height: 3rem;
+  padding: 0 1rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   color: var(--ciel-fonce);
   background: var(--ciel-doux);
   font-weight: 800;
@@ -1281,13 +1282,13 @@
 
 .routes-fixes {
   display: grid;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .route-fixe {
   display: grid;
-  gap: 10px;
-  padding: 14px;
+  gap: 0.625rem;
+  padding: 0.875rem;
   border-radius: var(--rayon-m);
   background: var(--creme);
 }
@@ -1300,7 +1301,7 @@
   display: grid;
   grid-template-columns: 6.5em 1fr;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .route-fixe-etiquette {
@@ -1313,14 +1314,14 @@
 
 .editeur-apercu {
   position: sticky;
-  top: 86px;
+  top: 5.375rem;
   display: grid;
-  gap: 14px;
+  gap: 0.875rem;
 }
 
 .apercu-cadre {
   overflow: hidden;
-  border: 6px solid #fff;
+  border: 0.375rem solid #fff;
   border-radius: var(--rayon-l);
   background: #fff;
   box-shadow: var(--ombre-3);
@@ -1334,7 +1335,7 @@
 
 .apercu-actions {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .apercu-actions .bouton {
@@ -1342,13 +1343,13 @@
 }
 
 .bouton-enregistrer {
-  min-height: 72px;
+  min-height: 4.5rem;
   font-size: 1.15rem;
 }
 
 .editeur-chargement {
   display: grid;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 /* --- Petits écrans (tablette, portable étroit) --------------------------------- */
@@ -1379,7 +1380,7 @@
   }
 
   .onglet {
-    padding: 0 12px;
+    padding: 0 0.75rem;
   }
 
   .onglet-numero {
@@ -1391,21 +1392,21 @@
    pour laisser voir la petite voiture qui roule en bas. */
 @media (max-height: 860px) {
   .connexion-centre {
-    padding-top: 16px;
-    padding-bottom: 150px;
+    padding-top: 1rem;
+    padding-bottom: 9.375rem;
   }
 
   .carte-connexion {
-    gap: 12px;
-    padding: 22px 30px;
+    gap: 0.75rem;
+    padding: 1.375rem 1.875rem;
   }
 
   .carte-connexion .champ input {
-    min-height: 52px;
+    min-height: 3.25rem;
   }
 
   .carte-connexion .bouton {
-    min-height: 54px;
+    min-height: 3.375rem;
   }
 
   .carte-connexion-marque h1 {
@@ -1413,6 +1414,19 @@
   }
 
   .carte-connexion .logo {
-    height: 48px !important;
+    height: 3rem !important;
   }
+}
+
+/* Les icônes suivent la taille du texte des boutons (utile sur très grand écran). */
+.bouton svg,
+.bouton-discret svg,
+.bouton-tester svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.bouton-icone svg {
+  width: 40%;
+  height: 40%;
 }

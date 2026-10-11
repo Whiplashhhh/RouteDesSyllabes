@@ -38,7 +38,7 @@ export function SceneAccueil() {
     return () => obs.disconnect();
   }, []);
 
-  const carH = Math.max(70, Math.min(taille.h * 0.15, taille.l * 0.12, 170));
+  const carH = Math.max(70, Math.min(taille.h * 0.15, taille.l * 0.12));
   const carL = (carH * VEHICULE_VB.largeur) / VEHICULE_VB.hauteur;
   const police = carH * 0.5;
   const etiquetteH = police * 1.24;

@@ -183,11 +183,11 @@
 /* Fusion : les deux étiquettes n'en forment plus qu'une,
    et les lettres se rapprochent pour se lire d'un seul souffle. */
 .consonne.soudee .lettres {
-  transform: translateX(0.14em);
+  transform: translateX(0.2em);
 }
 
 .voyelle.soudee .lettres {
-  transform: translateX(-0.14em);
+  transform: translateX(-0.2em);
 }
 
 .consonne.soudee .etiquette {
@@ -387,14 +387,15 @@
 }
 
 .panneau {
-  width: min(92vw, 860px);
+  width: min(92vw, 40em);
   max-height: 92vh;
   overflow: auto;
-  padding: clamp(20px, 3vmin, 44px);
-  border-radius: var(--rayon-xl);
+  padding: 1.4em;
+  border-radius: 1.6em;
   background: var(--creme);
   box-shadow: var(--ombre-3);
-  font-size: clamp(18px, 1.6vmin + 8px, 30px);
+  /* Tout le panneau suit la taille de l'écran, jusqu'au 86 pouces. */
+  font-size: clamp(18px, 2.1vmin, 52px);
   animation: monte 0.32s var(--courbe-rebond);
   user-select: none;
 }
@@ -402,8 +403,8 @@
 .panneau-entete {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: clamp(16px, 2.4vmin, 32px);
+  gap: 0.8em;
+  margin-bottom: 1.1em;
 }
 
 .panneau-entete > div {
@@ -424,18 +425,24 @@
 .panneau-retour {
   display: grid;
   place-items: center;
-  width: var(--cible);
-  height: var(--cible);
+  width: max(64px, 2.8em);
+  height: max(64px, 2.8em);
   border: 0;
   border-radius: 50%;
   background: var(--creme-2);
   color: var(--encre);
 }
 
+.panneau-fermer svg,
+.panneau-retour svg {
+  width: 45%;
+  height: 45%;
+}
+
 .panneau-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  gap: clamp(12px, 1.6vmin, 22px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5em), 1fr));
+  gap: 0.7em;
 }
 
 .action-grande {
@@ -443,11 +450,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: clamp(120px, 15vmin, 200px);
-  padding: 16px;
+  gap: 0.45em;
+  min-height: 6.2em;
+  padding: 0.7em;
   border: 0;
-  border-radius: var(--rayon-l);
+  border-radius: 1.2em;
   font-weight: 800;
   font-size: 1em;
   line-height: 1.2;
@@ -463,8 +470,8 @@
 }
 
 .action-grande svg {
-  width: clamp(36px, 4.5vmin, 64px);
-  height: clamp(36px, 4.5vmin, 64px);
+  width: 2.1em;
+  height: 2.1em;
 }
 
 .action-soleil {
@@ -506,10 +513,10 @@
   align-items: center;
   gap: 16px;
   width: 100%;
-  min-height: var(--cible);
-  padding: 14px 22px;
+  min-height: max(64px, 2.8em);
+  padding: 0.6em 1em;
   border: 2px solid var(--bord);
-  border-radius: var(--rayon-m);
+  border-radius: 0.9em;
   background: var(--papier);
   text-align: left;
   font-weight: 800;
@@ -527,7 +534,7 @@
 }
 
 .panneau-astuce {
-  margin-top: 20px;
+  margin-top: 1em;
   color: var(--encre-pale);
   font-size: 0.7em;
   text-align: center;

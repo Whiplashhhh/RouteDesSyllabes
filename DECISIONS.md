@@ -41,7 +41,7 @@ Choix faits en autonomie quand la demande ne précisait pas. Chacun peut être r
 - **Suppression** : confirmation douce sur la carte (« Supprimer / Garder »), puis bulle « Annuler »
   pendant 7 secondes. Côté serveur, la suppression est douce et purgée définitivement après 7 jours.
 - **Échelle** : la taille de base du texte suit la largeur d'écran
-  (`clamp(15px, 0.42vw + 9.5px, 26px)`), et le jeu calcule toutes ses tailles à partir de la scène.
+  (`clamp(16px, 0.42vw + 9.5px, 26px)`), et le jeu calcule toutes ses tailles à partir de la scène.
 - **Bouton maîtresse** en haut à droite, semi-transparent, appui long de 1,5 s avec un anneau jaune.
   Il est aussi accessible au clavier (Entrée), pour la maîtresse qui a un clavier.
 - Une page `/vitrine` (non liée dans l'interface) montre tous les véhicules, couleurs, routes et
